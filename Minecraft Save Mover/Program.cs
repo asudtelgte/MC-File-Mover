@@ -4,6 +4,7 @@ using System.Linq;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace Minecraft_Save_Mover
 {
@@ -20,6 +21,20 @@ namespace Minecraft_Save_Mover
                 new Service1()
             };
             ServiceBase.Run(ServicesToRun);
+        }
+
+        static bool watchForProg()
+        {
+            Boolean running = false;
+
+            foreach (Process p in Process.GetProcesses())
+            {
+               if ( p.MainModule.FileName.Contains("Minecraft Launcher"))
+                {
+                    running = true;
+                }
+            }
+            return running;
         }
     }
 }
