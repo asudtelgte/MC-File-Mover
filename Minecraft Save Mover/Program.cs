@@ -29,6 +29,7 @@ namespace Minecraft_Save_Mover
 
             foreach (Process p in Process.GetProcesses())
             {
+
                if ( p.MainModule.FileName.Contains("Minecraft Launcher"))
                 {
                     running = true;
