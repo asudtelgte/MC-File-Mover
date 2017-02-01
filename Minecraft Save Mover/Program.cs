@@ -22,20 +22,5 @@ namespace Minecraft_Save_Mover
             };
             ServiceBase.Run(ServicesToRun);
         }
-
-        static bool watchForProg()
-        {
-            Boolean running = false;
-
-            foreach (Process p in Process.GetProcesses())
-            {
-
-               if ( p.MainModule.FileName.Contains("Minecraft Launcher"))
-                {
-                    running = true;
-                }
-            }
-            return running;
-        }
-    }
+     }
 }
